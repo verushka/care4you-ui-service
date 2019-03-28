@@ -25,6 +25,7 @@ import {IncidentDeleteComponent} from '../ssi-incident/components/incident-delet
 import {OrganizationPositionCreateComponent} from './components/organization-position-create/organization-position-create.component';
 import {DepartmentUpdateService} from './services/department-update.service';
 import {DepartmentCreateService} from './services/department-create.service';
+import {OrganizationFunctionsComponent} from './components/organization-functions/organization-functions.component';
 
 
 
@@ -38,7 +39,8 @@ import {DepartmentCreateService} from './services/department-create.service';
     OrganizationDepartmentCreateComponent,
     OrganizationDepartmentUpdateComponent,
     OrganizationDepartmentDeleteComponent,
-    OrganizationPositionCreateComponent
+    OrganizationPositionCreateComponent,
+    OrganizationFunctionsComponent
 
   ],
   imports: [
@@ -58,7 +60,8 @@ import {DepartmentCreateService} from './services/department-create.service';
     OrganizationPositionComponent,
     OrganizationDepartmentCreateComponent,
     OrganizationDepartmentDeleteComponent,
-    OrganizationPositionCreateComponent
+    OrganizationPositionCreateComponent,
+    OrganizationFunctionsComponent
 
   ],
   providers: [

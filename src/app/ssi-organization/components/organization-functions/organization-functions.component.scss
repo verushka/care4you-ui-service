@@ -1,0 +1,62 @@
+@import "../../../../assets/grid/ssi-flexbox";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+
+  @include ssi-main-start();
+}
+
+.functions-container {
+  height: 100%;
+  overflow-y: auto;
+
+  @include ssi-main-center();
+}
+
+.functions-top {
+  width: 80%;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+
+  @include ssi-main-center();
+}
+
+.functions-center {
+  width: 80%;
+  display: flex;
+  padding-top: 20px;
+
+}
+
+.functions-container-img {
+  width: 40%;
+
+  @include ssi-main-center();
+  @include ssi-cross-center();
+}
+
+.functions-img {
+  width: 180px;
+  height: 160px;
+}
+
+.functions-center-list {
+  width: 60%;
+  color: #ffffff;
+
+  @include ssi-main-start();
+  @include ssi-cross-center();
+}
+
+.functions-center-list-item{
+  width: 100%;
+}
+
+.functions-center-list-text{
+  color: #ffffff;
+}
+

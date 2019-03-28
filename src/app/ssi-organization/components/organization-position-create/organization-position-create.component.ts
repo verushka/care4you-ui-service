@@ -8,7 +8,7 @@ import {unsubscribe} from '../../../ssi-shared/utils/unsubscribe.function';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {PositionsHttpService} from '../../services/positions-http-service';
-import {PositionDTO} from '../../api/domain/Position';
+import {Position, PositionDTO} from '../../api/domain/Position';
 
 @Component({
   selector: 'organization-position-create',

@@ -1,0 +1,43 @@
+<article class="functions-container">
+  <section class="functions-top">
+    <h3>Select a position</h3>
+    <select class="form-control" [(ngModel)]="selectedItem" (change)="onChange($event.target.value)" >
+      <option *ngFor="let infoPosition of infoPositions" [value]="infoPosition.id">
+        {{infoPosition.name}}
+      </option>
+    </select>
+  </section>
+
+  <section class="functions-center">
+    <div class="functions-container-img">
+      <img src="../../../../assets/images/skill-img.jpeg" class="img-thumbnail functions-img" alt="abilities">
+    </div>
+
+    <ul *ngIf="infoPositions.length > 0" class="functions-center-list">
+      <li *ngFor="let infoPosition of infoPositions" class="functions-center-list-item">
+        {{infoPosition.name}}
+      </li>
+    </ul>
+
+    <div *ngIf="infoPositions.length <= 0" class="jumbotron bg-transparent incidents-list-jumbotron functions-center-list-text">
+      <p class="lead">This position not have any abilities register still.</p>
+    </div>
+  </section>
+
+  <section class="functions-center">
+    <div class="functions-container-img">
+      <img src="../../../../assets/images/many-positions-img.jpg" class="img-thumbnail functions-img" alt="abilities">
+    </div>
+
+    <ul *ngIf="infoPositions.length > 0" class="functions-center-list">
+      <li *ngFor="let infoPosition of infoPositions" class="functions-center-list-item">{{infoPosition.name}}</li>
+    </ul>
+
+    <div *ngIf="infoPositions.length <= 0" class="jumbotron bg-transparent incidents-list-jumbotron functions-center-list-text">
+      <p class="lead">This position not have any equipment register still.</p>
+    </div>
+
+  </section>
+
+
+</article>

@@ -11,6 +11,7 @@ import {OrganizationPositionComponent} from '../components/organization-position
 import {OrganizationDepartmentCreateComponent} from '../components/organization-department-create/organization-department-create.component';
 import {OrganizationPositionCreateComponent} from '../components/organization-position-create/organization-position-create.component';
 import {OrganizationDepartmentUpdateComponent} from '../components/organization-department-update/organization-department-update.component';
+import {OrganizationFunctionsComponent} from '../components/organization-functions/organization-functions.component';
 
 
 export const ORGANIZATION_ROUTES_CONFIG: Routes = [
@@ -26,7 +27,8 @@ export const ORGANIZATION_ROUTES_CONFIG: Routes = [
           {path: 'department-create', component: OrganizationDepartmentCreateComponent},
           {path: 'department-update', component: OrganizationDepartmentUpdateComponent},
           {path: 'position', component: OrganizationPositionComponent},
-          {path: 'position-create', component: OrganizationPositionCreateComponent}
+          {path: 'position-create', component: OrganizationPositionCreateComponent},
+          {path: 'functions', component: OrganizationFunctionsComponent}
 
         ]
       },

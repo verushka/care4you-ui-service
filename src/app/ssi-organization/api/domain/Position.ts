@@ -4,8 +4,8 @@ export class Position {
   code: string;
   name: string;
   description: string;
-  abilitiesId: any;
-  equipmentsId: any;
+  abilities: any;
+  equipments: any;
 
 }
 export class PositionDTO {
@@ -14,5 +14,5 @@ export class PositionDTO {
   name: string;
   description: string;
   abilities: any;
-  equipmentsId: any;
+  equipments: any;
 }

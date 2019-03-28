@@ -17,7 +17,7 @@ export class OrganizationFunctionsComponent implements OnInit, OnDestroy {
 
   public infoPositions: Position[];
   public abilities: any;
-  public equipment: any;
+  public equipments: any;
   public selectedItem: any;
 
   private _positionsSubscription: Subscription;
@@ -48,8 +48,10 @@ export class OrganizationFunctionsComponent implements OnInit, OnDestroy {
     console.log(this.selectedItem);
     this.infoPositions.forEach(function (position) {
       if (position.id === event) {
-        this.abilities = this.getAbilities(position.abilitiesId);
-        this.equipment = this.getEquipments(position.equipmentsId);
+        console.log(position);
+        this.abilities = position.abilities;
+        this.equipments = position.equipments;
+        console.log(this.abilities);
       }
     });
   }

@@ -26,7 +26,9 @@ import {OrganizationPositionCreateComponent} from './components/organization-pos
 import {DepartmentUpdateService} from './services/department-update.service';
 import {DepartmentCreateService} from './services/department-create.service';
 import {OrganizationFunctionsComponent} from './components/organization-functions/organization-functions.component';
-
+import {AbilitiesHttpService} from './services/abilities-http-service';
+import {SafetyEquipmentsHttpService} from './services/safety-equipments-http-service';
+import {PositionCreateService} from './services/position-create.service';
 
 
 @NgModule({
@@ -67,9 +69,12 @@ import {OrganizationFunctionsComponent} from './components/organization-function
   providers: [
     DepartmentsHttpService,
     PositionsHttpService,
+    AbilitiesHttpService,
+    SafetyEquipmentsHttpService,
     OrganizationDepartmentDeleteService,
     DepartmentUpdateService,
-    DepartmentCreateService
+    DepartmentCreateService,
+    PositionCreateService
   ],
   entryComponents: [
     OrganizationDepartmentDeleteComponent

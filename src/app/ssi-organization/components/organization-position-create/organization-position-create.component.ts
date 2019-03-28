@@ -41,7 +41,6 @@ export class OrganizationPositionCreateComponent implements OnInit, OnDestroy {
       (position: Position) => {
         this.position = position;
         this._router.navigate(['/organization/department']);
-        console.log(position);
       }
     );
   }

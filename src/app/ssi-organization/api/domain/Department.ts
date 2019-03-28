@@ -14,6 +14,7 @@ export class DepartmentDTO {
     this.name = name;
     this.description = description;
   }
+
   code: string;
   name: string;
   description: string;

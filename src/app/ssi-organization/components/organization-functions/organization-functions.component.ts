@@ -7,6 +7,8 @@ import {unsubscribe} from '../../../ssi-shared/utils/unsubscribe.function';
 import {Subscription} from 'rxjs';
 import {PositionsHttpService} from '../../services/positions-http-service';
 import {Position} from '../../api/domain/Position';
+import {Ability} from '../../api/domain/Ability';
+import {SafetyEquipment} from '../../api/domain/SafetyEquipment';
 
 @Component({
   selector: 'organization-functions',
@@ -15,15 +17,17 @@ import {Position} from '../../api/domain/Position';
 })
 export class OrganizationFunctionsComponent implements OnInit, OnDestroy {
 
-  public infoPositions: Position[];
-  public abilities: any;
-  public equipments: any;
-  public selectedItem: any;
+  public positions: Position[];
+  public abilities: Ability[];
+  public equipments: SafetyEquipment[];
+  public positionSelected: Position;
 
   private _positionsSubscription: Subscription;
 
   constructor(private _positionsHttpService: PositionsHttpService) {
-    this.infoPositions = [];
+    this.positions = [];
+    this.abilities = [];
+    this.equipments = [];
   }
 
   public ngOnInit(): void {
@@ -37,31 +41,26 @@ export class OrganizationFunctionsComponent implements OnInit, OnDestroy {
   private _initialize(): void {
     this._positionsSubscription = this._positionsHttpService.doFindAll().subscribe(
       (positions: Position[]) => {
-        this.infoPositions = positions;
+        this.positions = positions;
+        this._setDefaultSelected();
       }
     );
   }
 
-  public onChange(event): void {
-    console.log('this.abilities');
-    //console.log(event);
-    console.log(this.selectedItem);
-    this.infoPositions.forEach(function (position) {
-      if (position.id === event) {
-        console.log(position);
-        this.abilities = position.abilities;
-        this.equipments = position.equipments;
-        console.log(this.abilities);
-      }
-    });
+  public onChange(position: Position): void {
+    if (position.abilities) {
+      this.abilities = position.abilities;
+    }
+
+    if (position.equipments) {
+      this.equipments = position.equipments;
+    }
   }
 
-  public getAbilities(arrayId): any {
-
+  private _setDefaultSelected(): void {
+    if (this.positions.length > 0) {
+      this.positionSelected = this.positions[0];
+      this.onChange(this.positionSelected);
+    }
   }
-
-  public getEquipments(arrayId): any {
-
-  }
-
 }

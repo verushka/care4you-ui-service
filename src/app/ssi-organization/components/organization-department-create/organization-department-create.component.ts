@@ -52,7 +52,6 @@ export class OrganizationDepartmentCreateComponent implements OnInit, OnDestroy 
       (department: Department) => {
         this.department = department;
         this._router.navigate(['/organization/department']);
-        console.log(department);
       }
     );
   }

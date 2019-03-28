@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {LoadDummyEmployeesService} from './load-dummy-employees.service';
+import {LoadDummyInformationService} from './load-dummy-information.service';
 
 @Component({
   selector: 'ssi-root',
@@ -8,7 +8,7 @@ import {LoadDummyEmployeesService} from './load-dummy-employees.service';
 })
 export class SsiComponent {
 
-  constructor(private _loadDummyEmployeesService: LoadDummyEmployeesService) {
+  constructor(private _loadDummyEmployeesService: LoadDummyInformationService) {
 
   }
 }

@@ -59,7 +59,6 @@ export class OrganizationDepartmentComponent implements OnInit, OnDestroy {
   private _initialize(): void {
     this._departmentsSubscription = this._departmentsHttpService.doFindAll().subscribe(
       (departments: Department[]) => {
-        console.log(departments);
         this.infoDepartments = departments;
       }
     );

@@ -3,8 +3,8 @@
 :host {
   display: flex;
   flex-direction: column;
+  height: 100%;
   flex-grow: 1;
-  height: 70%;
 }
 
 .department-container {
@@ -29,7 +29,7 @@
   @include ssi-main-center();
 }
 
-.department-text{
+.department-text {
   color: #ffffff;
 }
 
@@ -58,6 +58,7 @@
   display: flex;
   width: 50%;
 }
-.department-text-title{
+
+.department-text-title {
   color: #ffffff;
 }

@@ -27,7 +27,6 @@ export class OrganizationPositionCreateComponent implements OnInit, OnDestroy {
   public equipments: SafetyEquipment [];
 
 
-
   public submitted: boolean;
 
   private _positionsSubscription: Subscription;
@@ -55,22 +54,29 @@ export class OrganizationPositionCreateComponent implements OnInit, OnDestroy {
   }
 
   public onSubmit(): void {
+    this.submitted = true;
+
+    if (!this.positionFormGroup.valid) {
+      return;
+    }
+
     const positionDTO: PositionDTO = this.positionFormGroup.value;
+    console.log(positionDTO);
     this._positionsSubscription = this._positionsHttpService.doInsert(positionDTO).subscribe(
       (position: Position) => {
         this.position = position;
-        this._router.navigate(['/organization/department']);
+        this._router.navigate(['/organization/position']);
       }
     );
   }
 
   private _initForm(): void {
     this.positionFormGroup = this._formBuilder.group({
-      code: [null],
+      code: [null, [Validators.required]],
       name: [null, [Validators.required]],
       description: [null],
-      abilitiesId: [null],
-      equipmentsId: [null]
+      abilitiesId: [[]],
+      equipmentsId: [[]]
     });
   }
 

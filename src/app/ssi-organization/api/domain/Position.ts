@@ -13,7 +13,7 @@ export class Position {
 
 export class PositionDTO {
 
-  constructor(code: string, name: string, description: string, abilitiesId: string[], equipmentsId: string[]) {
+  constructor(code: string, name: string, description: string, abilitiesId: string[] = [], equipmentsId: string[] = []) {
     this.code = code;
     this.name = name;
     this.description = description;

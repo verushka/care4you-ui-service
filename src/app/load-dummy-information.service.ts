@@ -106,11 +106,11 @@ export class LoadDummyInformationService implements OnDestroy {
 
   private _registerDummyAbilities(): Promise<void> {
     this._dummyAbilitiesDTO = [
-      new AbilityDTO('ability 1', 'description 1'),
-      new AbilityDTO('ability 2', 'description 2'),
-      new AbilityDTO('ability 3', 'description 3'),
-      new AbilityDTO('ability 4', 'description 4'),
-      new AbilityDTO('ability 5', 'description 5')
+      new AbilityDTO('Be careful', 'Be careful'),
+      new AbilityDTO('Good communication', 'Good communication'),
+      new AbilityDTO('Ability to follow instructions', 'Ability to follow instructions'),
+      new AbilityDTO('Teamwork', 'Teamwork'),
+      new AbilityDTO('Attentive', 'Attentive')
     ];
 
     return new Promise(
@@ -131,11 +131,11 @@ export class LoadDummyInformationService implements OnDestroy {
 
   private _registerDummyEquipments(): Promise<void> {
     this._dummyEquipmentsDTO = [
-      new SafetyEquipmentDTO('code 1', 'description 1', 'name 1', 70),
-      new SafetyEquipmentDTO('code 2', 'description 2', 'name 2', 70),
-      new SafetyEquipmentDTO('code 3', 'description 3', 'name 3', 70),
-      new SafetyEquipmentDTO('code 4', 'description 4', 'name 4', 70),
-      new SafetyEquipmentDTO('code 5', 'description 5', 'name 5', 70)
+      new SafetyEquipmentDTO('code 1', 'description 1', 'Helmet', 70),
+      new SafetyEquipmentDTO('code 2', 'description 2', 'Gloves', 70),
+      new SafetyEquipmentDTO('code 3', 'description 3', 'Vest', 70),
+      new SafetyEquipmentDTO('code 4', 'description 4', 'Boots', 70),
+      new SafetyEquipmentDTO('code 5', 'description 5', 'Glasses', 70)
     ];
 
     return new Promise(
@@ -155,31 +155,31 @@ export class LoadDummyInformationService implements OnDestroy {
 
   private _registerDummyPositions(): void {
     this._dummyPositionsDTO = [
-      new PositionDTO('code 1', 'position 1', 'description 1', [
+      new PositionDTO('code 1', 'Operator', 'description 1', [
         this._dummyAbilities[0].id,
         this._dummyAbilities[1].id
       ], [
         this._dummyEquipments[0].id,
         this._dummyEquipments[1].id
       ]),
-      new PositionDTO('code 2', 'position 2', 'description 2', [
+      new PositionDTO('code 2', 'Driver', 'description 2', [
         this._dummyAbilities[0].id
       ], [
         this._dummyEquipments[0].id
       ]),
-      new PositionDTO('code 3', 'position 3', 'description 3', [
+      new PositionDTO('code 3', 'Builder', 'description 3', [
         this._dummyAbilities[3].id
       ], [
         this._dummyEquipments[3].id
       ]),
-      new PositionDTO('code 4', 'position 4', 'description 4', [
+      new PositionDTO('code 4', 'Machine Operator', 'description 4', [
         this._dummyAbilities[2].id,
         this._dummyAbilities[3].id,
         this._dummyAbilities[4].id
       ], [
         this._dummyEquipments[3].id
       ]),
-      new PositionDTO('code 5', 'position 5', 'description 5', [
+      new PositionDTO('code 5', 'Assistant', 'description 5', [
         this._dummyAbilities[0].id,
         this._dummyAbilities[1].id,
         this._dummyAbilities[2].id

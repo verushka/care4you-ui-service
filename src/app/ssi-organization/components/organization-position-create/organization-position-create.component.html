@@ -28,6 +28,33 @@
            aria-describedby="descriptionHelp"
            placeholder="write here a description for the position">
   </section>
+  <section class="form-group">
+    <label for="abilitiesId">Ability</label>
+    <select class="form-control"
+            id="abilitiesId"
+            formControlName="abilitiesId">
+      <option *ngFor="let ability of abilities"
+              value="{{ability.id}}">{{ability.name}}</option>
+    </select>
+    <small class="form-text text-danger"
+           *ngIf="submitted && positionFormGroup.get('abilitiesId').errors">
+      This field is required.
+    </small>
+  </section>
+
+  <section class="form-group">
+    <label for="equipmentsId">Safety</label>
+    <select class="form-control"
+            id="equipmentsId"
+            formControlName="equipmentsId"  >
+      <option *ngFor="let equipment of equipments"
+              value="{{equipment.id}}">{{equipment.name}}</option>
+    </select>
+    <small class="form-text text-danger"
+           *ngIf="submitted && positionFormGroup.get('equipmentsId').errors">
+      This field is required.
+    </small>
+  </section>
 
   <section class="position-create-btn">
     <button type="submit" class="btn btn-success">Submit</button>
